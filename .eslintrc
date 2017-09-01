@@ -1,8 +1,10 @@
 {
   "parser": "babel-eslint",
-  "ecmaFeatures": {
-    "jsx": true,
-    "modules": true
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
   },
   "env": {
     "browser": true,
@@ -96,7 +98,7 @@
         "allowKeywords": true
       }
     ],
-    "eqeqeq": 0, // http://eslint.org/docs/rules/eqeqeq [REVISIT ME]
+    "eqeqeq": [2, "always", {"null": "ignore"}], // http://eslint.org/docs/rules/eqeqeq [REVISIT ME]
     "guard-for-in": 0, // http://eslint.org/docs/rules/guard-for-in [REVISIT ME]
     "jsx-quotes": [
       2,
