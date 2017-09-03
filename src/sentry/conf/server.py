@@ -298,6 +298,7 @@ AUTHENTICATION_BACKENDS = (
     'social_auth.backends.trello.TrelloBackend',
     'social_auth.backends.asana.AsanaBackend',
     'social_auth.backends.slack.SlackBackend',
+    'social_auth.backends.gitlab.GitlabBackend',
 )
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -320,7 +321,7 @@ SOCIAL_AUTH_USER_MODEL = AUTH_USER_MODEL = 'sentry.User'
 SOCIAL_AUTH_AUTHENTICATION_BACKENDS = (
     'social_auth.backends.github.GithubBackend', 'social_auth.backends.bitbucket.BitbucketBackend',
     'social_auth.backends.trello.TrelloBackend', 'social_auth.backends.asana.AsanaBackend',
-    'social_auth.backends.slack.SlackBackend', 'social_auth.backends.github_apps.GithubAppsBackend',
+    'social_auth.backends.slack.SlackBackend', 'social_auth.backends.github_apps.GithubAppsBackend', 'social_auth.backends.gitlab.GitlabBackend',
 )
 
 SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
@@ -332,6 +333,9 @@ GOOGLE_OAUTH2_CLIENT_SECRET = ''
 
 GITHUB_APP_ID = ''
 GITHUB_API_SECRET = ''
+
+GITLAB_APP_ID = ''
+GITLAB_API_SECRET = ''
 
 GITHUB_APPS_APP_ID = ''
 GITHUB_APPS_API_SECRET = ''
@@ -362,6 +366,7 @@ INITIAL_CUSTOM_USER_MIGRATION = '0108_fix_user'
 AUTH_PROVIDERS = {
     'github': ('GITHUB_APP_ID', 'GITHUB_API_SECRET'),
     'github_apps': ('GITHUB_APPS_APP_ID', 'GITHUB_APPS_API_SECRET'),
+    'gitlab': ('GITLAB_APP_ID', 'GITLAB_API_SECRET'),
     'trello': ('TRELLO_API_KEY', 'TRELLO_API_SECRET'),
     'bitbucket': ('BITBUCKET_CONSUMER_KEY', 'BITBUCKET_CONSUMER_SECRET'),
     'asana': ('ASANA_CLIENT_ID', 'ASANA_CLIENT_SECRET'),
@@ -371,6 +376,7 @@ AUTH_PROVIDERS = {
 AUTH_PROVIDER_LABELS = {
     'github': 'GitHub',
     'github_apps': 'GitHub Apps',
+    'gitlab': 'GitLab',
     'trello': 'Trello',
     'bitbucket': 'Bitbucket',
     'asana': 'Asana',
